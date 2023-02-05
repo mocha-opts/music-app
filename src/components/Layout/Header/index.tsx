@@ -1,5 +1,5 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   HeaderContainer,
   LeftWrapper,
@@ -9,14 +9,14 @@ import {
   ToolBar,
   SearchBar,
   SearchInput,
-  Microphone,
-} from './style'
+  Microphone
+} from './style';
 
 const Header = () => {
-  const history = useHistory()
-  const handleGoBack = () => history.goBack()
-  const handleGoForward = () => history.goForward()
-  
+  const navigate = useNavigate();
+  const handleGoBack = () => navigate(-1);
+  const handleGoForward = () => navigate(1);
+
   return (
     <HeaderContainer>
       <LeftWrapper>
@@ -41,7 +41,7 @@ const Header = () => {
       </LeftWrapper>
       <RightWrapper></RightWrapper>
     </HeaderContainer>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

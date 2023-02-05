@@ -1,27 +1,25 @@
-import React from 'react'
-import styled from 'styled-components'
-import style from '../../../style/global-style'
-import PropTypes from 'prop-types'
+import React from 'react';
+import styled from 'styled-components';
+import Variables from '../../../style/Variables';
 
 export const HeaderContainer = styled.div`
   height: 60px;
   display: flex;
-  background-color: ${style['theme-color']};
+  background-color: var(--theme-red);
   flex-direction: row;
   justify-content: flex-start;
-`
+`;
 export const Logo = styled.div`
   height: 60px;
   width: 180px;
   /* background-color: white; */
-  /* background: url(${(props) => props.imgUrl}) no-repeat 0 9999px; */
   background-position: 0 0;
-`
+`;
 export const LeftWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
+`;
 export const IconWrapper = styled.div`
   width: 24px;
   height: 24px;
@@ -42,12 +40,12 @@ export const IconWrapper = styled.div`
     user-select: none;
     -webkit-user-drag: none;
   }
-`
-export const RightWrapper = styled.div``
+`;
+export const RightWrapper = styled.div``;
 export const ToolBar = styled.div`
   height: 60px;
   width: 380px;
-`
+`;
 export const SearchBar = styled.div`
   display: flex;
   align-items: center;
@@ -71,7 +69,7 @@ export const SearchBar = styled.div`
     user-select: none;
     -webkit-user-drag: none;
   }
-`
+`;
 export const Microphone = styled.div`
   width: 30px;
   height: 30px;
@@ -85,7 +83,7 @@ export const Microphone = styled.div`
     font-size: 20px;
     color: rgb(255 255 255 / 70%);
   }
-`
+`;
 export const SearchInput = styled.input`
   height: 20px;
   width: 100px;
@@ -104,4 +102,4 @@ export const SearchInput = styled.input`
       color: transparent;
     }
   }
-`
+`;

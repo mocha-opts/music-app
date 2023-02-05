@@ -17,5 +17,26 @@
     "jsx": "react"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "src/index.js",
+    "src/App.tsx",
+    "src/App.tsx",
+    "src/components/Carsouel/index.jsx",
+    "src/pages/Discovery/index.jsx",
+    "src/pages/Discovery/SongList/index.jsx",
+    "src/pages/Discovery/Recommend/Banner/index.jsx",
+    "src/pages/Discovery/Recommend/SongList/index.jsx",
+    "src/components/Login/index.jsx",
+    "src/components/Login/PhoneEmailLogin/index.jsx",
+    "src/components/Login/ScanCodeLogin/index.jsx",
+    "src/components/Layout/index.tsx",
+    "src/components/Layout/Sidebar/index.tsx",
+    "src/components/Layout/Header/index.tsx",
+    "src/components/Layout/Footer/index.tsx",
+    "src/pages/Videos/index.jsx",
+    "src/pages/Discovery/Recommend/index.jsx"
+  ]
 }
