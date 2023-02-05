@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Variables from '../../../style/Variables';
 
 export const HeaderContainer = styled.div`
   height: 60px;

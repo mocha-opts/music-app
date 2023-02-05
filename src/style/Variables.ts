@@ -19,13 +19,13 @@ const Variables = css`
     --gray: #7f7f7f;
     --blue: #057dcd;
     --theme-red: rgba(236, 65, 65);
-    --color-shadow: rgba (212, 68, 57, 0.5);
-    --font-color-desc: #2E3030;
-    --font-color-desc-v2: #bba8a8;// 略淡
+    --color-shadow: rgba(212, 68, 57, 0.5);
+    --font-color-desc: #2e3030;
+    --font-color-desc-v2: #bba8a8; // 略淡
     --border-color: #e4e4e4;
     --background-color: #f2f3f4;
-    --background-color-shadow: rgba (0, 0, 0, 0.3);
-    --highlight-background-color': #fff;
+    --background-color-shadow: rgba(0, 0, 0, 0.3);
+    --highlight-background-color: #fff;
     // Other
     --max-width: 1500px;
     --transition: all 0.25s ease-in-out;

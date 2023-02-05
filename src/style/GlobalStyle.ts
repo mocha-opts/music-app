@@ -2,10 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import Variables from './Variables';
 
 export const GlobalStyle = createGlobalStyle`
-  ${Variables};
-  *,
-  *::before,
-  *::after {
+  ${Variables}
+
+  *,*::before,*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -28,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 10px;
   }
   body {
-    margin: 0 auto;
+    margin: 0;
     font-family: var(--font-main);
     background-color: var(--white);
     color: var(--black);
