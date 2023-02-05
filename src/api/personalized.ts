@@ -33,6 +33,6 @@ export const getBanner = async () => {
       type: 0
     }
   });
-
+  console.log(response, 'banner');
   return response.banners;
 };
