@@ -1,15 +1,15 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
 export const CarsouelWrapper = styled.div`
   width: 100%;
-`
+`;
 
 export const OperateWrapper = styled.div`
   display: flex;
   flex: 1 1 auto;
   z-index: 0;
   opacity: 0;
-`
+`;
 export const Operate = styled.div`
   width: 30px;
   height: 30px;
@@ -29,7 +29,7 @@ export const Operate = styled.div`
     color: #ffffff;
   }
   /* background-color: #ffffff; */
-`
+`;
 
 export const CarsouelMain = styled.div`
   display: flex;
@@ -43,11 +43,11 @@ export const CarsouelMain = styled.div`
       transition: opacity ease 0.2s;
     }
   }
-`
+`;
 export const BannerWrapper = styled.div`
   width: 540px;
   position: relative;
-`
+`;
 
 export const BannerBaseItem = styled.div`
   position: absolute;
@@ -57,75 +57,68 @@ export const BannerBaseItem = styled.div`
   width: 540px;
   border-radius: 10px;
   transform: scale(0.81);
-`
-const getTransform = ({ operate, index }) => {
+`;
+const getTransform = ({ operate, index }: { index: number; operate: any }) => {
   if (index === operate.front) {
-    return `scale(1)`
+    return `scale(1)`;
   } else {
-    return `scale(.81)`
+    return `scale(.81)`;
   }
-}
-const getTransformOrigin = ({ operate, index }) => {
+};
+const getTransformOrigin = ({ operate, index }: { index: number; operate: any }) => {
   if (index === operate.front) {
-    return ``
+    return ``;
   } else if (index === operate.front + 1) {
-    return `226% 50%`
+    return `226% 50%`;
   } else if (index === operate.front - 1) {
-    return `-126% 50%`
+    return `-126% 50%`;
   } else if (index === 0 && operate.front === operate.max - 1) {
-    return `226% 50%`
+    return `226% 50%`;
   } else if (index === operate.max - 1 && operate.front === 0) {
-    return `-126% 50%`
+    return `-126% 50%`;
   } else {
-    return `0% 50%`
+    return `0% 50%`;
   }
-}
-const getZindex = ({ operate, index }) => {
+};
+const getZindex = ({ operate, index }: { index: number; operate: any }) => {
   if (index === operate.front) {
-    return `999`
-  } else if (
-    index === operate.front + 1 ||
-    (operate.front === operate.max - 1 && index !== operate.front + 1)
-  ) {
-    return `99`
-  } else if (
-    index === operate.front - 1 ||
-    (operate.front === 0 && index !== operate.front - 1)
-  ) {
-    return `99`
+    return `999`;
+  } else if (index === operate.front + 1 || (operate.front === operate.max - 1 && index !== operate.front + 1)) {
+    return `99`;
+  } else if (index === operate.front - 1 || (operate.front === 0 && index !== operate.front - 1)) {
+    return `99`;
   } else {
-    return `9`
+    return `9`;
   }
-}
+};
 export const BannerItem = styled(BannerBaseItem)`
-  transform: ${(props) => getTransform(props)};
-  transform-origin: ${(props) => getTransformOrigin(props)};
-  z-index: ${(props) => getZindex(props)};
-  transition: transform cubic-bezier(0.4, 0.4, 0.4, 0.4) 0.4s,
-    z-index cubic-bezier(0.4, 0.4, 0.4, 0.4) 0.4s,
+  transform: ${(props: any) => getTransform(props)};
+  transform-origin: ${(props: any) => getTransformOrigin(props)};
+  z-index: ${(props: any) => getZindex(props)};
+  transition: transform cubic-bezier(0.4, 0.4, 0.4, 0.4) 0.4s, z-index cubic-bezier(0.4, 0.4, 0.4, 0.4) 0.4s,
     transform-origin cubic-bezier(0.4, 0.4, 0.4, 0.4) 0.4s; ;
-`
+`;
 
 export const BannerCover = styled.img`
   width: 100%;
   height: 200px;
   border-radius: 10px;
-`
-const getBgColor = ({ titleColor }) => {
-  let color = `rgb(74, 121, 204)`
+`;
+const getBgColor = ({ titleColor }: { titleColor: string }) => {
+  let color = `rgb(74, 121, 204)`;
   switch (titleColor) {
     case 'red':
-      color = `rgb(204,74,74)`
-      break
+      color = `rgb(204,74,74)`;
+      break;
     case 'blue':
-      color = `rgb(74, 121, 204)`
-      break
+      color = `rgb(74, 121, 204)`;
+      break;
     default:
-      color = `rgb(74, 121, 204)`
-      break
+      color = `rgb(74, 121, 204)`;
+      break;
   }
-  return color
-}
+  return color;
+};
 export const TypeTitle = styled.span`
   display: inline-block;
   position: absolute;
@@ -139,15 +132,13 @@ export const TypeTitle = styled.span`
   color: #ffffff;
   font-size: 12px;
   padding: 0 10px;
-  background-color: ${(props) => getBgColor(props)};
-`
+  background-color: ${(props: any) => getBgColor(props.color)};
+`;
 
 export const DotWraper = styled.ul`
   position: absolute;
   bottom: -20px;
   display: flex;
-`
+`;
 
-export const Dot = styled.li`
-  
-`
+export const Dot = styled.li``;

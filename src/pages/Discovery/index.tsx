@@ -10,8 +10,8 @@ const Discovery = () => {
       {/* <div>{`discovery`}</div> */}
       <Recommend></Recommend>
       <Routes>
-        <Route exact path={ROUTES.recommend} component={Recommend}></Route>
-        <Route exact path={ROUTES.songlist} component={SongList}></Route>
+        <Route path={ROUTES.recommend} element={Recommend}></Route>
+        <Route path={ROUTES.songlist} element={SongList}></Route>
       </Routes>
     </Suspense>
   );

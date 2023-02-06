@@ -37,6 +37,16 @@ export default ({ command }: ConfigEnv): UserConfig => {
 
         proxy: {
           '/api': {
+            target: 'http://127.0.0.1:3000',
+            changeOrigin: true,
+            secure: false,
+            agent: new http.Agent(),
+            headers: {
+              Referer: 'http://127.0.0.1:3000'
+            },
+            rewrite: (path: string) => path.replace(/^\/api/, '')
+          },
+          '/api2': {
             target: 'http://netease-cloud-music-api-mocha-opts.vercel.app',
             changeOrigin: true,
             secure: false,

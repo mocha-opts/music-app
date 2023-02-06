@@ -11,20 +11,11 @@ import {
   BannerCover,
   BannerWrapper
 } from './style';
-import { getBanner } from '../../api/personalized';
-const Carsouel = (props) => {
-  const [banners, setBanners] = useState([]);
+interface Carsouel {
+  list: any;
+}
+const Carsouel = ({ list }: Carsouel) => {
   const [operate, setoperate] = useState({ front: 1, type: 'next', max: 0 });
-
-  useEffect(() => {
-    async function fetchData() {
-      const result = await getBanner();
-      console.log('banner', result);
-      setBanners(result);
-    }
-    fetchData();
-  }, []);
-
   useEffect(() => {
     let timer = setInterval(() => goNext(), 3000);
     return () => clearInterval(timer);
@@ -33,9 +24,9 @@ const Carsouel = (props) => {
     setoperate((prev) => {
       return {
         ...prev,
-        front: prev.front === 0 ? banners.length - 1 : prev.front - 1,
+        front: prev.front === 0 ? list.length - 1 : prev.front - 1,
         type: 'prev',
-        max: banners.length
+        max: list.length
       };
     });
   };
@@ -43,14 +34,14 @@ const Carsouel = (props) => {
     setoperate((prev) => {
       return {
         ...prev,
-        front: prev.front === banners.length - 1 ? 0 : prev.front + 1,
+        front: prev.front === list.length - 1 ? 0 : prev.front + 1,
         type: 'next',
-        max: banners.length
+        max: list.length
       };
     });
   };
   const showSongListDetail = () => {};
-  const selectDot = (e) => {};
+  const selectDot = () => {};
   console.log(operate);
   return (
     <CarsouelWrapper>
@@ -59,7 +50,7 @@ const Carsouel = (props) => {
           <Operate className="iconfont">&#xe744;</Operate>
         </OperateWrapper>
         <BannerWrapper>
-          {banners.map(({ encodeId, imageUrl, titleColor, typeTitle, targetId, targetType, url }, index) => {
+          {list?.map(({ encodeId, imageUrl, titleColor, typeTitle, targetId, targetType, url }, index) => {
             return (
               <>
                 <BannerItem
@@ -69,7 +60,7 @@ const Carsouel = (props) => {
                   onClick={(targetId, targetType) => showSongListDetail}
                 >
                   <BannerCover src={imageUrl} loading="lazy" alt="" />
-                  <TypeTitle titleColor={titleColor}>{typeTitle}</TypeTitle>
+                  <TypeTitle color={titleColor}>{typeTitle}</TypeTitle>
                 </BannerItem>
                 <DotWraper>
                   <Dot onMouseEnter={(e) => selectDot}></Dot>

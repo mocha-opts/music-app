@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { getPersonalizedSongList } from '../../../../api/personalized'
+import React, { useEffect, useState } from 'react';
+import { getPersonalizedSongList } from '../../../../api/personalized';
 import {
   SubTitle,
   ArrowIcon,
@@ -9,9 +9,12 @@ import {
   Container,
   Description,
   PlayIcon,
-  PlayCount,
-} from './style'
-import { formatPlayCount } from '../../../../utils/format'
+  PlayCount
+} from './style';
+import { formatPlayCount } from '../../../../utils/format';
+import { Spin } from 'antd';
+import { useQuery } from '@tanstack/react-query';
+import { Personalized } from '../../../../types/api/personalized';
 /**
  *alg: "featured"
  *canDislike: false
@@ -36,15 +39,13 @@ import { formatPlayCount } from '../../../../utils/format'
  *trackCount: 63
  *trackNumberUpdateTime: 1617005638707
  *type: 0
- * @return {*} 
+ * @return {*}
  */
 const SongList = () => {
-  const [songlist, setSonglist] = useState([])
-  useEffect(async () => {
-    const result = await getPersonalizedSongList({ limit: 10 })
-    console.log(result)
-    setSonglist(result)
-  }, [])
+  const { data: songList, isLoading } = useQuery(['personalized'], () => getPersonalizedSongList({ limit: 10 }));
+  if (isLoading) {
+    return <Spin />;
+  }
   return (
     <>
       <SubTitle>
@@ -52,7 +53,7 @@ const SongList = () => {
         <ArrowIcon className="iconfont">&#xe743;</ArrowIcon>
       </SubTitle>
       <SongListWrapper>
-        {songlist.map(
+        {songList.map(
           ({
             id,
             name,
@@ -64,12 +65,12 @@ const SongList = () => {
             playCount,
             trackCount,
             trackNumberUpdateTime,
-            type,
-          }) => {
+            type
+          }: Personalized) => {
             return (
               <SongListItem key={id}>
-                <Container url={picUrl}>
-                <Cover src={picUrl} loading='lazy' alt='' />
+                <Container>
+                  <Cover src={picUrl} loading="lazy" alt="" />
 
                   <PlayCount>
                     <i className="iconfont play-arrow">&#xe68b;</i>
@@ -79,12 +80,12 @@ const SongList = () => {
                 </Container>
                 <Description>{name}</Description>
               </SongListItem>
-            )
+            );
           }
         )}
       </SongListWrapper>
     </>
-  )
-}
+  );
+};
 
-export default SongList
+export default SongList;

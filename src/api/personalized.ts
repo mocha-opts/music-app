@@ -7,7 +7,7 @@ export const getPersonalizedSongList = async ({ limit }: { limit: number }) => {
       limit
     }
   });
-  return response.result || [];
+  return response.result;
 };
 
 export const getPersonalizedNewMusic = async () => {
@@ -24,15 +24,4 @@ export const getPersonalizedMV = async () => {
   });
 
   return response.result;
-};
-
-export const getBanner = async () => {
-  const response = await axios({
-    url: '/banner',
-    params: {
-      type: 0
-    }
-  });
-  console.log(response, 'banner');
-  return response.banners;
 };

@@ -9,6 +9,7 @@ import Layout from './components/Layout';
 import RecoilProvider from './components/providers/RecoilProvider';
 import QueryProvider from './components/providers/QueryProvider';
 import { ConfigProvider, message } from 'antd';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const App: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -31,6 +32,7 @@ const App: React.FC = () => {
                 <Router />
               </Layout>
             </Suspense>
+            <ReactQueryDevtools initialIsOpen />
           </ConfigProvider>
         </RecoilProvider>
       </QueryProvider>

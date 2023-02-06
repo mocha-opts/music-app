@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 const ellipsis = `
   display: -webkit-box;
   overflow:hidden;
   text-overflow:ellipsis;
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical
-`
+`;
 export const SubTitle = styled.span`
   display: flex;
   align-self: flex-start;
@@ -18,7 +18,7 @@ export const SubTitle = styled.span`
   &:hover {
     color: #000000;
   }
-`
+`;
 
 export const ArrowIcon = styled.i`
   width: 24px;
@@ -28,12 +28,12 @@ export const ArrowIcon = styled.i`
   text-align: center;
   vertical-align: center;
   line-height: 26px;
-`
+`;
 export const SongListWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-column-gap:18px;
-`
+  grid-column-gap: 18px;
+`;
 export const SongListItem = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ export const SongListItem = styled.div`
   flex: 1 1 140px;
   /* max-width: 190px; */
   ${ellipsis}
-`
+`;
 
 export const Container = styled.div`
   position: relative;
@@ -49,8 +49,7 @@ export const Container = styled.div`
   width: 100%;
   padding-top: 100%;
   border-radius: 5px;
-  /* background: ${(props) =>
-    props.url ? `url(${props.url}) no-repeat` : ''}; */
+  /* background: ${(props: any) => (props.url ? `url(${props.url}) no-repeat` : '')}; */
   /* background-size: contain; */
   cursor: pointer;
   margin-bottom: 9px;
@@ -63,7 +62,7 @@ export const Container = styled.div`
       opacity: 1;
     }
   }
-`
+`;
 export const Cover = styled.img`
   position: absolute;
   width: 100%;
@@ -71,7 +70,7 @@ export const Cover = styled.img`
   top: 0;
   left: 0;
   border-radius: 5px;
-`
+`;
 export const Description = styled.div`
   font-size: 14px;
   line-height: 20px;
@@ -82,14 +81,14 @@ export const Description = styled.div`
   &:hover {
     color: rgb(0, 0, 0);
   }
-`
+`;
 export const PlayIcon = styled.i`
   position: absolute;
   bottom: 10px;
   right: 10px;
   font-size: 40px;
   color: rgb(236, 65, 65);
-`
+`;
 export const PlayCount = styled.span`
   position: absolute;
   display: flex;
@@ -102,4 +101,4 @@ export const PlayCount = styled.span`
   .play-arrow {
     font-size: 14px;
   }
-`
+`;
