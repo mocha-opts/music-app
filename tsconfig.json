@@ -27,9 +27,9 @@
     "src/App.tsx",
     "src/components/Carsouel/index.tsx",
     "src/pages/Discovery/index.tsx",
-    "src/pages/Discovery/SongList/index.tsx",
-    "src/pages/Discovery/Recommend/Banner/index.tsx",
-    "src/pages/Discovery/Recommend/SongList/index.tsx",
+    "src/pages/Discovery/PlayListPage/index.tsx",
+    "src/pages/Discovery/RecommendPage/Banner/index.tsx",
+    "src/pages/Discovery/RecommendPage/SongList/index.tsx",
     "src/components/Login/index.tsx",
     "src/components/Login/PhoneEmailLogin/index.tsx",
     "src/components/Login/ScanCodeLogin/index.tsx",
@@ -38,7 +38,7 @@
     "src/components/Layout/Header/index.tsx",
     "src/components/Layout/Footer/index.tsx",
     "src/pages/Videos/index.tsx",
-    "src/pages/Discovery/Recommend/index.tsx",
+    "src/pages/Discovery/RecommendPage/index.tsx",
     "src/types/api/personalized.json"
   ]
 }
